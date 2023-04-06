@@ -8,7 +8,6 @@ from os import listdir, getcwd
 from os.path import join
 from functools import reduce
 from random import shuffle
-import threading
 
 def filter_coco(T):
     return (coco_names.index(T[0]) + 1)
@@ -97,9 +96,10 @@ def main():
                   'mirror', 'dining table', 'window', 'desk', 'toilet', 'door', 'tv', 'laptop', 'mouse', 'remote', 
                   'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'blender', 'book', 
                   'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush', 'hair brush']
+    
 
     ##################### ENTER CONF PARAMETERS HERE ###################
-    coco = COCO('/home/jovyan/xalil/coco/instances_val2017.json')
+    coco = COCO('instances_val2017.json')
     categories_intrest = [["car",0],["truck",1]]
     output_folder = "/home/jovyan/xalil/coco/outputs/"
     image_limit_per_class = 5
